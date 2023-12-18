@@ -2,6 +2,7 @@ import { Fragment } from "react"
 import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap"
 import { Outlet, Link } from "react-router-dom"
 
+
 const NavBarMain = () => {
     return (
         <Fragment>
@@ -33,4 +34,4 @@ const NavBarMain = () => {
     )
 }
 
-export default NavBarMain
+export default NavBarMain;
