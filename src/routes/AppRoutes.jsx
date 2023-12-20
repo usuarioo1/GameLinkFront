@@ -6,6 +6,7 @@ import Ofertas from '../views/Ofertas';
 import Soporte from '../views/Soporte';
 import { Routes,Route, Navigate } from 'react-router-dom';
 import Layout from '../layouts/Layout';
+import Login from '../views/Login';
 
 const AppRoutes = () => {
     return (
@@ -16,6 +17,7 @@ const AppRoutes = () => {
                 <Route path='figuras' element={<Figuras />} />
                 <Route path='ofertas' element={<Ofertas />} />
                 <Route path='soporte' element={<Soporte />} />
+                <Route path='login' element={<Login />} />
                 <Route path='*' element={<Navigate replace='/' />} />
 
             </Route>

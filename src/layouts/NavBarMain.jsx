@@ -21,14 +21,11 @@ const NavBarMain = () => {
                                 </NavDropdown.Item>
                             </NavDropdown>
                             <Nav.Link as={Link} to='/soporte'>Soporte</Nav.Link>
+                            <Nav.Link as={Link} to='/login'>Login</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-
-            <section>
-                <Outlet />
-            </section>
 
         </Fragment>
     )
