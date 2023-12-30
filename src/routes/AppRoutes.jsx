@@ -11,7 +11,7 @@ import Login from '../views/Login';
 const AppRoutes = () => {
     return (
         <Routes>
-            <Route path='' element={<Layout />}> // esto reemplazar por el layout que tendra nav outlet y footer
+            <Route path='' element={<Layout />}> {/* esto reemplazar por el layout que tendra nav outlet y footer*/}
                 <Route path='/' element={<Home />} />
                 <Route path='juegos' element={<Juegos />} />
                 <Route path='figuras' element={<Figuras />} />
