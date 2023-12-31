@@ -1,6 +1,9 @@
 import { Button } from 'react-bootstrap'
 import { useContext, useEffect, useState } from 'react'
 import { GamesContext } from '../context/games/gamesContext'
+import JuegoId from './JuegoId'
+import { Link } from 'react-router-dom'
+import { Card } from 'react-bootstrap'
 
 const Juegos = () => {
   const { getGames, games } = useContext(GamesContext)
@@ -23,15 +26,19 @@ const Juegos = () => {
 
   return (
     <>
-      <div>
-        {data.map((product) => (
-          <div key={product._id}>
-            <h1>{product.nombre}</h1>
-            <img src={product.img} alt="" />
-          </div>
-        ))}
-        <Button onClick={() => getGames()}>peticion</Button>
-      </div>
+      <Link to={`/product/`}>
+        <Card>
+          {data.map((product) => (
+            <Card.Body key={product._id}>
+              <Card.Title>{product.nombre}</Card.Title>
+              <Card.Img variant="top" src={product.img} alt="" />
+            </Card.Body>
+          ))}
+          <Card.Footer>
+            <Button onClick={() => getGames()}>Peticion</Button>
+          </Card.Footer>
+        </Card>
+      </Link>
     </>
   );
 }

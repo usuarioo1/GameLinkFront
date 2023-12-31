@@ -17,6 +17,12 @@ const gameReducer = (state,action) => {
         
                 }]
             }
+        case "GET_GAME":
+            return{
+                ...state,
+                product:[payload]
+            }
+            
             
         default:
             return state;
