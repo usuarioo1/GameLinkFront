@@ -7,6 +7,7 @@ import Soporte from '../views/Soporte';
 import { Routes,Route, Navigate } from 'react-router-dom';
 import Layout from '../layouts/Layout';
 import Login from '../views/Login';
+import LoginRegister from '../views/LoginRegister';
 
 const AppRoutes = () => {
     return (
@@ -18,6 +19,8 @@ const AppRoutes = () => {
                 <Route path='ofertas' element={<Ofertas />} />
                 <Route path='soporte' element={<Soporte />} />
                 <Route path='login' element={<Login />} />
+                <Route path='registrate' element={<LoginRegister />} />
+                
                 <Route path='*' element={<Navigate replace='/' />} />
 
             </Route>

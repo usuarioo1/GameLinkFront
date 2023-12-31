@@ -49,7 +49,7 @@ export const GamesProvider = ({ children }) => {
 
     return (
         <div>
-            <GamesContext.Provider value={{getGames,getGameById, products: gamesState.product }}>{children}</GamesContext.Provider>
+            <GamesContext.Provider value={{getGames,getGameById, products: gamesState.products }}>{children}</GamesContext.Provider>
         </div>
     )
     }
