@@ -1,7 +1,8 @@
-import { Button, Card } from 'react-bootstrap';
+import { Button, Card, Container, Col, Row } from 'react-bootstrap';
 import { useContext, useEffect, useState } from 'react';
 import { GamesContext } from '../context/games/gamesContext';
 import { Link } from 'react-router-dom';
+
 
 const Juegos = () => {
   const { getGames, games } = useContext(GamesContext);
@@ -23,21 +24,24 @@ const Juegos = () => {
   }, []);
 
   return (
-    <>
-      {data.map((product) => (
-        <Link to={`/juegos/${product._id}`} key={product._id}>
-          <Card key={product._id}>
-            <Card.Body>
-              <Card.Title>{product.nombre}</Card.Title>
-              <Card.Img variant="top" src={product.img} alt="" />
-            </Card.Body>
-            <Card.Footer>
-              <Button onClick={() => getGames()}>Peticion</Button>
-            </Card.Footer>
-          </Card>
-        </Link>
-      ))}
-    </>
+    <Container className='d-flex justify-content-around mt-5'>
+      <Row>
+        {data.map((product) => (
+          <Col key={product._id} className="mb-4">
+            <Link to={`/juegos/${product._id}`} className="card-link">
+              <Card className="custom-card mt-5" style={{ width: '18rem', height: '23rem' }} as={'div'}>
+                <Card.Img variant="top" src={product.img} alt="" />
+                <Card.Body className="text-center custom-card-body">
+                  <Card.Title>{product.nombre}</Card.Title>
+                  <Card.Text>${product.precio}</Card.Text>
+                  <Button variant="primary" className="custom-button">Agregar al carro</Button>
+                </Card.Body>
+              </Card>
+            </Link>
+          </Col>
+        ))}
+      </Row>
+    </Container>
   );
 };
 

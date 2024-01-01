@@ -10,10 +10,8 @@ const JuegoId = () => {
   useEffect(() => {
     const fetchJuegoDetails = async () => {
       try {
-        // Hacer una solicitud al backend para obtener detalles del juego por ID utilizando Axios
         const response = await axiosClient.get(`/games/${id}`);
-        
-        // Almacenar los detalles del juego en el estado
+      // Almacenar los detalles del juego en el estado
         setJuego(response.data.product);
       } catch (error) {
         console.error("Error fetching juego details:", error);
