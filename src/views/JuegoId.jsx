@@ -1,23 +1,44 @@
+// JuegoId.js
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import axiosClient from '../config/axiosClient';
 
+const JuegoId = () => {
+  const { id } = useParams();
+  const [juego, setJuego] = useState(null);
 
-import { Card } from 'react-bootstrap'
+  useEffect(() => {
+    const fetchJuegoDetails = async () => {
+      try {
+        // Hacer una solicitud al backend para obtener detalles del juego por ID utilizando Axios
+        const response = await axiosClient.get(`/games/${id}`);
+        
+        // Almacenar los detalles del juego en el estado
+        setJuego(response.data.product);
+      } catch (error) {
+        console.error("Error fetching juego details:", error);
+      }
+    };
 
-const JuegoId = (product) => {
+    fetchJuegoDetails();
+  }, [id]);
 
-    const {nombre, precio, img, descripcion, } = product
   return (
-    <Link to={`/product/`}>
-      <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={img} />
-      <Card.Body>
-        <Card.Title>{nombre}</Card.Title>
-        <Card.Text>
-          Precio: ${precio}
-        </Card.Text>
-      </Card.Body>
-    </Card>
-    </Link>
-  )
-}
+    <div>
+      {juego ? (
+        <>
+          <h2>Detalles del juego con ID: {id}</h2>
+          <img src={juego.img} alt={juego.nombre} />
+          <p>Nombre: {juego.nombre}</p>
+          <p>Descripción: {juego.descripcion}</p>
+          <p>Precio: {juego.precio}</p>
+          {/* Mostrar otros detalles según sea necesario */}
+        </>
+      ) : (
+        <p>Cargando detalles del juego...</p>
+      )}
+    </div>
+  );
+};
 
-export default JuegoId
+export default JuegoId;
