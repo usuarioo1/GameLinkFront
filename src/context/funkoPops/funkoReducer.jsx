@@ -1,32 +1,32 @@
-const gameReducer = (state,action) => {
+const funkoReducer = (state, action) =>{
 
     const {type, payload} = action;
 
     switch (type) {
-        case "GET_GAMES":
+        case "GET_FUNKOS":
+            
             return {
                 ...state,
                 products: payload,
-                product: [{
+                product:[{
                     id:"",
                     nombre:"",
-                    precio:0,
-                    img:"",
+                    valor:0, 
                     descripcion:"",
-                    stock:"",
-        
+                    img:""
                 }]
+                
             }
-        case "GET_GAME":
-            return{
+        case "GET_FUNKO":
+            return {
                 ...state,
                 product:[payload]
             }
-            
-            
-        default:
-            return state;
+            default:
+                return state;
     }
+
+
 }
 
-export default gameReducer;
+export default funkoReducer;
