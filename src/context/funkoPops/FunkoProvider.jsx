@@ -5,22 +5,56 @@ import axiosClient from "../../config/axiosClient";
 
 import React from 'react'
 
-const FunkoProvider = () => {
-    0
+export const FunkoProvider = ({ children }) => {
+
     const initialState = {
         products: [],
         product: [{
+            id: "",
+            nombre: "",
+            valor: 0,
+            descripcion: "",
+            img: "",
 
         }]
     }
 
+    const [funkoState, dispatch] = useReducer(funkoReducer, initialState)
+
+    const getFunkos = async () => {
+
+        const response = await axiosClient.get('/funkos')
+        const funkos = response.data.info
+        dispatch({
+            type: "GET_FUNKOS",
+            payload: funkos
+        })
+        return funkos
+    }
+
+    const getFunkoById = async (id) => {
+
+        try {
+            const response = await axiosClient.get(`/products/${id}`)
+            const funkoInfo = response.data.product
+            console.log(funkoInfo)
+
+            dispatch({
+                type: "GET_FUNKO",
+                payload: funkoInfo
+            })
+        } catch (error) {
+            console.error(error)
+        }
+
+    }
     return (
         <div>
-
+            <FunkoContext.Provider value={{ getFunkos, getFunkoById, products: funkoState.products }}>{children}</FunkoContext.Provider>
         </div>
     )
 }
 
-export default FunkoProvider
+
 
 
