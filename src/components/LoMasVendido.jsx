@@ -22,7 +22,7 @@ const LoMasVendido = (props) => {
                         <Card.Body className='text-center custom-card-body'>
                             <Card.Title>Call Of Duty III</Card.Title>
                             <Card.Text>
-                            <i class="bi bi-tag-fill"></i>$35.000
+                            <i className="bi bi-tag-fill"></i>  $35.000
 
                             </Card.Text>
                             <Button variant="primary" className='custom-button'>Agregar al carro</Button>
@@ -34,7 +34,7 @@ const LoMasVendido = (props) => {
                         <Card.Body className='text-center custom-card-body'>
                             <Card.Title>TLOR: Returns To Moria</Card.Title>
                             <Card.Text>
-                                $22.500
+                            <i className="bi bi-tag-fill"></i> $22.500
                             </Card.Text>
                             <Button variant="primary" className='custom-button'>Agregar al carro</Button>
                         </Card.Body>
@@ -45,7 +45,7 @@ const LoMasVendido = (props) => {
                         <Card.Body className='text-center custom-card-body'>
                             <Card.Title>Red Dead Redemption</Card.Title>
                             <Card.Text>
-                                $13.000
+                            <i className="bi bi-tag-fill"></i> $13.000
                             </Card.Text>
                             <Button variant="primary" className='custom-button'>Agregar al carro</Button>
                         </Card.Body>
@@ -55,7 +55,7 @@ const LoMasVendido = (props) => {
                         <Card.Body className='text-center custom-card-body'>
                             <Card.Title>Risk of Rain</Card.Title>
                             <Card.Text>
-                                $3.000
+                            <i className="bi bi-tag-fill"></i>  $3.000
                             </Card.Text>
                             <Button variant="primary" className='custom-button'>Agregar al carro</Button>
                         </Card.Body>

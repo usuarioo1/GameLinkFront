@@ -32,7 +32,7 @@ const NavBarMain = () => {
                                 </NavDropdown.Item>
                             </NavDropdown>
                             <Nav.Link as={Link} to='/soporte'>Soporte</Nav.Link>
-                            <Nav.Link as={Link} to='/login'>Iniciar Sesión <i className="bi bi-person-circle custom-login"></i></Nav.Link>
+                            <Nav.Link as={Link} to='/login'><i className="bi bi-person-circle custom-login"></i></Nav.Link>
                             {/* <Nav.Link as={Link} to='/registrate'>Registrate</Nav.Link> */}
                             <Nav.Link as={Link} to='/login'><i className="bi bi-cart custom-cart"></i></Nav.Link>
 
