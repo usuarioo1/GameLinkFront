@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axiosClient from '../config/axiosClient';
+import '../css/juegoId.css'
 
 const JuegoId = () => {
   const { id } = useParams();
@@ -11,7 +12,7 @@ const JuegoId = () => {
     const fetchJuegoDetails = async () => {
       try {
         const response = await axiosClient.get(`/games/${id}`);
-      // Almacenar los detalles del juego en el estado
+        // Almacenar los detalles del juego en el estado
         setJuego(response.data.product);
       } catch (error) {
         console.error("Error fetching juego details:", error);
@@ -25,12 +26,14 @@ const JuegoId = () => {
     <div>
       {juego ? (
         <>
-          <h2>Detalles del juego con ID: {id}</h2>
+        <div class="card2">
+          <h2>{juego.nombre}</h2>
           <img src={juego.img} alt={juego.nombre} />
-          <p>Nombre: {juego.nombre}</p>
-          <p>Descripción: {juego.descripcion}</p>
-          <p>Precio: {juego.precio}</p>
+          <p class="description">{juego.descripcion}</p>
+          <p class="price">${juego.precio}</p>
           {/* Mostrar otros detalles según sea necesario */}
+          </div>
+          
         </>
       ) : (
         <p>Cargando detalles del juego...</p>

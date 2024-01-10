@@ -2,6 +2,7 @@ import { Button, Card, Container, Col, Row } from 'react-bootstrap';
 import { useContext, useEffect, useState } from 'react';
 import { GamesContext } from '../context/games/gamesContext';
 import { Link } from 'react-router-dom';
+import '../css/juegosId.css'
 
 
 const Juegos = () => {
