@@ -3,7 +3,6 @@ import { useReducer } from "react"
 import funkoReducer from "./FunkoReducer";
 import axiosClient from "../../config/axiosClient";
 
-import React from 'react'
 
 export const FunkoProvider = ({ children }) => {
 
@@ -15,6 +14,7 @@ export const FunkoProvider = ({ children }) => {
             valor: 0,
             descripcion: "",
             img: "",
+            stock:""
 
         }]
     }
@@ -35,7 +35,7 @@ export const FunkoProvider = ({ children }) => {
     const getFunkoById = async (id) => {
 
         try {
-            const response = await axiosClient.get(`/products/${id}`)
+            const response = await axiosClient.get(`/funkos/${id}`)
             const funkoInfo = response.data.product
             console.log(funkoInfo)
 

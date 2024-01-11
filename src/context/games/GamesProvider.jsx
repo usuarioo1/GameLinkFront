@@ -11,8 +11,8 @@ export const GamesProvider = ({ children }) => {
         products:[],
         product:[{
             id:"",
-            nombre:0,
-            precio:"",
+            nombre:"",
+            precio:0,
             img:"",
             descripcion:"",
             stock:"",
@@ -35,7 +35,7 @@ export const GamesProvider = ({ children }) => {
         
     const getGameById = async(id) =>{
         try {
-            const response = await axiosClient.get(`/products/${id}`)
+            const response = await axiosClient.get(`/games/${id}`)
             const gameInfo = response.data.product
 
             dispatch({

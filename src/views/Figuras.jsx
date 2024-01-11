@@ -25,7 +25,7 @@ const Figuras = () => {
       <Row>
         {data.map((product) => (
           <Col key={product._id} className="mb-4">
-            <Link to={`/funkos/${product._id}`} className="card-link">
+            <Link to={`/figuras/${product._id}`} className="card-link">
               <Card className="custom-card mt-5" style={{ width: '18rem', height: '23rem' }} as={'div'}>
                 <Card.Img variant="top" src={product.img} alt="" />
                 <Card.Body className="text-center custom-card-body">
