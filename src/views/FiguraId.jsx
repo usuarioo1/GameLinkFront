@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import axiosClient from '../config/axiosClient';
+import '../css/funkoId.css'
 
 const FiguraId = () => {
 
@@ -29,13 +30,14 @@ const FiguraId = () => {
         <div>
             {funko ? (
                 <>
-                    <div>
-                        <h2>{funko.nombre}</h2>
-                        <img src={funko.img} alt={funko.nombre} />
-                        <p class="description">{funko.descripcion}</p>
-                        <p class="price">${funko.valor}</p>
+                    <div className="customCard">
+                        <h2 className="cardTitle">{funko.nombre}</h2>
+                        <img className="cardImage" src={funko.img} alt={funko.nombre} />
+                        <p className="cardDescription">{funko.descripcion}</p>
+                        <p className="cardPrice">${funko.valor}</p>
                         {/* Mostrar otros detalles según sea necesario */}
                     </div>
+
 
                 </>
             ) : (

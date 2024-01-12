@@ -1,0 +1,38 @@
+.customCard {
+    width: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    background-color: #fff;
+    margin: 20px;
+}
+
+.customCard:hover {
+    transform: scale(1.05);
+}
+
+.cardTitle {
+    font-size: 1.8rem;
+    margin: 10px 0;
+    color: #333;
+}
+
+.cardImage {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.cardDescription {
+    padding: 15px;
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.cardPrice {
+    padding: 15px;
+    font-size: 1.25rem;
+    color: #ff9900;
+    font-weight: bold;
+}
