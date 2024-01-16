@@ -50,7 +50,7 @@ export const FunkoProvider = ({ children }) => {
     }
     return (
         <div>
-            <FunkoContext.Provider value={{ getFunkos, getFunkoById, products: funkoState.products }}>{children}</FunkoContext.Provider>
+            <FunkoContext.Provider value={{ getFunkos, getFunkoById, products: funkoState.products, product: funkoState.product }}>{children}</FunkoContext.Provider>
         </div>
     )
 }

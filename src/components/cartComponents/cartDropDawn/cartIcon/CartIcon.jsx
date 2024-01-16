@@ -1,6 +1,6 @@
 
 import { CartContext } from '../../../../context/cart/cartContext'
-import shopIcon from '../../../../assets/online-shop-svgrepo-com.svg'
+import shopIcon from '../../../../assets/carro.svg'
 import { useContext } from 'react'
 
 const CartIcon = () => {
@@ -9,9 +9,9 @@ const CartIcon = () => {
 
     const handleCartOpen = () => setIsCartOpen(!isCartOpen)
     return (
-        <div className='cart-icon-container' onClick={handleCartOpen}>
-            <img src={shopIcon} className='shop-icon' alt="cart-icon" />
-            <span className='item-count'>{cartCount}</span>
+        <div onClick={handleCartOpen}>
+            <img src={shopIcon}/>
+            <span>{cartCount}</span>
         </div>
     )
 }

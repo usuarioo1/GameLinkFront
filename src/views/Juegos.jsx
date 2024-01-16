@@ -2,7 +2,10 @@ import { Button, Card, Container, Col, Row } from 'react-bootstrap';
 import { useContext, useEffect, useState } from 'react';
 import { GamesContext } from '../context/games/gamesContext';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../context/cart/cartContext';
 import '../css/juegosId.css'
+
+
 
 
 const Juegos = () => {
@@ -10,6 +13,12 @@ const Juegos = () => {
 
   // Declarar el estado antes de su uso
   const [data, setData] = useState([]);
+  const { getGameById, game } = useContext(GamesContext)
+  const { addItemToCart, cartCount } = useContext(CartContext)
+
+  const handleAdd = () => { if (cartCount < stock) addItemToCart(game[0]) }
+
+  //const {nombre, stock, valor, img, descripcion} = product[0]
 
   useEffect(() => {
     const axiosGames = async () => {
@@ -35,7 +44,8 @@ const Juegos = () => {
                 <Card.Body className="text-center custom-card-body">
                   <Card.Title>{product.nombre}</Card.Title>
                   <Card.Text>${product.precio}</Card.Text>
-                  <Button variant="primary" className="custom-button">Agregar al carro</Button>
+                  {product.stock === 0 ? (<h4>sin stock</h4>) : (<Button variant="primary" className="custom-button" onClick={handleAdd}>Agregar al carro</Button>)}
+
                 </Card.Body>
               </Card>
             </Link>
