@@ -42,3 +42,6 @@
     border-color: transparent !important;
 }
 
+.card-link{
+    text-decoration: none !important;
+}
