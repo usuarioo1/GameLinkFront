@@ -2,7 +2,10 @@ import React from 'react'
 
 const Soporte = () => {
   return (
-    <h1>Soporte</h1>
+    // eslint-disable-next-line react/jsx-no-undef
+    <Container className='justify-content-center mt-5'>
+     
+    </Container>
   )
 }
 

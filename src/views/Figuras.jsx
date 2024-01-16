@@ -21,7 +21,11 @@ const Figuras = () => {
     axiosFunkos();
   },[]);
   return (
-    <Container className='d-flex justify-content-around mt-5'>
+    <Container className='justify-content-center mt-5'>
+      <Container>
+        <h1 className='text-left'>Nuestras Figuras</h1>
+      </Container>
+      <Container className='d-flex justify-content-around mt-5'>
       <Row>
         {data.map((product) => (
           <Col key={product._id} className="mb-4">
@@ -39,6 +43,7 @@ const Figuras = () => {
         ))}
       </Row>
     </Container>
+  </Container>
   );
 };
 

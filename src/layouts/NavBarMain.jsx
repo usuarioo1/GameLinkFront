@@ -25,7 +25,6 @@ const NavBarMain = () => {
                     <Navbar.Collapse id="basic-navbar-nav" className="custom-justify">
                         <Nav className="">
                             <Nav.Link as={Link} to='/'>Home</Nav.Link>
-                            <Nav.Link as={Link} to='/ofertas'>Ofertas</Nav.Link>
                             <NavDropdown title="Productos" id="basic-nav-dropdown">
                                 <NavDropdown.Item as={Link} to='/juegos'>Juegos</NavDropdown.Item>
                                 <NavDropdown.Item as={Link} to='/figuras'>
@@ -34,9 +33,10 @@ const NavBarMain = () => {
                             </NavDropdown>
                             <Nav.Link as={Link} to='/soporte'>Soporte</Nav.Link>
                             <Nav.Link as={Link} to='/login'><i className="bi bi-person-circle custom-login"></i></Nav.Link>
+                            <Nav.Link as={Link} to='/login'><i className="bi bi-cart"></i></Nav.Link>
                             {/* <Nav.Link as={Link} to='/registrate'>Registrate</Nav.Link> */}
                             <Nav.Link as={Link} to='/login'>{CartIcon}</Nav.Link>
-
+                            
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

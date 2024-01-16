@@ -25,23 +25,30 @@ const Juegos = () => {
   }, []);
 
   return (
-    <Container className='d-flex justify-content-around mt-5'>
-      <Row>
-        {data.map((product) => (
-          <Col key={product._id} className="mb-4">
-            <Link to={`/juegos/${product._id}`} className="card-link">
-              <Card className="custom-card mt-5" style={{ width: '18rem', height: '23rem' }} as={'div'}>
-                <Card.Img variant="top" src={product.img} alt="" />
-                <Card.Body className="text-center custom-card-body">
-                  <Card.Title>{product.nombre}</Card.Title>
-                  <Card.Text>${product.precio}</Card.Text>
-                  <Button variant="primary" className="custom-button">Agregar al carro</Button>
-                </Card.Body>
-              </Card>
-            </Link>
-          </Col>
-        ))}
-      </Row>
+
+    <Container className='justify-content-center mt-5'>
+      <Container>
+        <h1 className='text-left'>Nuestro Catálogo</h1>
+      </Container>
+      <Container className='d-flex justify-content-around mt-5'>
+        <Row>
+          {data.map((product) => (
+            <Col key={product._id} className="mb-4">
+              <Link to={`/juegos/${product._id}`} className="card-link">
+                <Card className="custom-card mt-5" style={{ width: '18rem', height: '23rem' }} as={'div'}>
+                  <Card.Img variant="top" src={product.img} alt="" />
+                  <Card.Body className="text-center custom-card-body">
+                    <Card.Title>{product.nombre}</Card.Title>
+                    <Card.Text>${product.precio}</Card.Text>
+                    <Button variant="primary" className="custom-button">Agregar al carro</Button>
+                  </Card.Body>
+                </Card>
+              </Link>
+            </Col>
+          ))}
+        </Row>
+      </Container>
+
     </Container>
   );
 };
