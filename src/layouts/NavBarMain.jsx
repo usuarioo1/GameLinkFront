@@ -1,5 +1,5 @@
 import { Fragment , useContext} from "react"
-import CartContext from "../context/cart/CartContext"
+import CartContext from "../context/cart/cartContext"
 import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap"
 import { Outlet, Link } from "react-router-dom"
 import CartIcon from "../components/cartComponents/cartDropDawn/cartIcon/CartIcon"
@@ -39,13 +39,8 @@ const NavBarMain = () => {
                             <Nav.Link as={Link} to='/soporte'>Soporte</Nav.Link>
                             <Nav.Link as={Link} to='/login'><i className="bi bi-person-circle custom-login"></i></Nav.Link>
                             {/* <Nav.Link as={Link} to='/registrate'>Registrate</Nav.Link> */}
-<<<<<<< HEAD
-                            {<Nav.Link as={Link} to='/checkout'>CheckOut</Nav.Link> }
-                            <Nav.Link>{<CartIcon />}</Nav.Link>
-=======
                             <CartIcon></CartIcon>
                             {isCartOpen && <CartDropdown />}
->>>>>>> 1b8b52e5d3d9e3b266fa39955d93fbbb66a3ee38
                             
                         </Nav>
                     </Navbar.Collapse>

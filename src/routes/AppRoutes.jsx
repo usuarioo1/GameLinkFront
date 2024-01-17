@@ -9,11 +9,7 @@ import Login from '../views/Login';
 import LoginRegister from '../views/LoginRegister';
 import JuegoId from '../views/JuegoId';
 import FiguraId from '../views/FiguraId';
-<<<<<<< HEAD
-import CheckoutItem from '../components/checkout/CheckoutItem';
-=======
 import Checkout from '../components/checkout/Checkout.jsx';
->>>>>>> 1b8b52e5d3d9e3b266fa39955d93fbbb66a3ee38
 
 const AppRoutes = () => {
     return (
@@ -27,13 +23,7 @@ const AppRoutes = () => {
                 <Route path='registrate' element={<LoginRegister  />} />
                 <Route path='juegos/:id' element={<JuegoId  />} />
                 <Route path='figuras/:id' element={<FiguraId  />} />
-<<<<<<< HEAD
-                <Route path='checkout' element={<CheckoutItem  />} />
-
-                
-=======
                 <Route path='checkout' element= { <Checkout/>} />               
->>>>>>> 1b8b52e5d3d9e3b266fa39955d93fbbb66a3ee38
                 <Route path='*' element={<Navigate replace='/' />} />
 
             </Route>
