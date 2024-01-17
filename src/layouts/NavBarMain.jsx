@@ -4,6 +4,7 @@ import { Outlet, Link } from "react-router-dom"
 import CartIcon from "../components/cartComponents/cartDropDawn/cartIcon/CartIcon"
 
 
+
 const NavBarMain = () => {
     return (
         <Fragment>
@@ -33,9 +34,9 @@ const NavBarMain = () => {
                             </NavDropdown>
                             <Nav.Link as={Link} to='/soporte'>Soporte</Nav.Link>
                             <Nav.Link as={Link} to='/login'><i className="bi bi-person-circle custom-login"></i></Nav.Link>
-                            <Nav.Link as={Link} to='/login'><i className="bi bi-cart"></i></Nav.Link>
                             {/* <Nav.Link as={Link} to='/registrate'>Registrate</Nav.Link> */}
-                            <Nav.Link as={Link} to='/login'>{CartIcon}</Nav.Link>
+                            {<Nav.Link as={Link} to='/checkout'>CheckOut</Nav.Link> }
+                            <Nav.Link>{<CartIcon />}</Nav.Link>
                             
                         </Nav>
                     </Navbar.Collapse>

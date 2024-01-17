@@ -1,8 +1,10 @@
 import React from 'react'
 
-const cartReducer = (state, payload) => {
+const cartReducer = (state, action) => {
 
-    switch (key) {
+    const { type, payload } = action;
+
+    switch (type) {
         case "SET_CART_ITEMS":
             return {
                 ...state,
