@@ -62,7 +62,7 @@ const Juegos = () => {
                     <h4>sin stock</h4>
                   ) : (
                     <Button variant="primary" className="custom-button" onClick={() => handleAdd(product) }>
-                      Agregar al carrito
+                      Agregar al carrito!
                     </Button>
                   )}
                 </Card.Body>
