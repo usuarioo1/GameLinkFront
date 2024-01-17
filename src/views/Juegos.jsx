@@ -2,8 +2,9 @@ import { Button, Card, Container, Col, Row } from 'react-bootstrap';
 import { useContext, useEffect, useState } from 'react';
 import { GamesContext } from '../context/games/gamesContext';
 import { Link } from 'react-router-dom';
-import { CartContext } from '../context/cart/cartContext';
-import '../css/juegosId.css'
+import  CartContext  from '../context/cart/CartContext';
+import '../css/juegosId.css';
+
 
 
 
@@ -15,8 +16,16 @@ const Juegos = () => {
   const [data, setData] = useState([]);
   const { getGameById, game } = useContext(GamesContext)
   const { addItemToCart, cartCount } = useContext(CartContext)
+  console.log(addItemToCart, cartCount)
 
-  const handleAdd = () => { if (cartCount < stock) addItemToCart(game[0]) }
+
+  const handleAdd = (event) => 
+  { event.preventDefault(); 
+    if ( cartCount < data[0].stock){addItemToCart(data[0])} else {
+      console.log(cartCount);
+    } 
+  //! SE DEBE OBTENER DE FORMA DINAMICA EL ID DE PRODUCTO PARA CARGARLO EN PRODUCTOS LINEA 24 (DATA[0]) ** CORREGIR
+  }
 
   //const {nombre, stock, valor, img, descripcion} = product[0]
 
@@ -34,26 +43,6 @@ const Juegos = () => {
   }, []);
 
   return (
-<<<<<<< HEAD
-    <Container className='d-flex justify-content-around mt-5'>
-      <Row>
-        {data.map((product) => (
-          <Col key={product._id} className="mb-4">
-            <Link to={`/juegos/${product._id}`} className="card-link">
-              <Card className="custom-card mt-5" style={{ width: '18rem', height: '23rem' }} as={'div'}>
-                <Card.Img variant="top" src={product.img} alt="" />
-                <Card.Body className="text-center custom-card-body">
-                  <Card.Title>{product.nombre}</Card.Title>
-                  <Card.Text>${product.precio}</Card.Text>
-                  {product.stock === 0 ? (<h4>sin stock</h4>) : (<Button variant="primary" className="custom-button" onClick={handleAdd}>Agregar al carro</Button>)}
-
-                </Card.Body>
-              </Card>
-            </Link>
-          </Col>
-        ))}
-      </Row>
-=======
 
     <Container className='justify-content-center mt-5'>
       <Container>
@@ -69,7 +58,7 @@ const Juegos = () => {
                   <Card.Body className="text-center custom-card-body">
                     <Card.Title>{product.nombre}</Card.Title>
                     <Card.Text>${product.precio}</Card.Text>
-                    <Button variant="primary" className="custom-button">Agregar al carro</Button>
+                    <Button variant="primary" className="custom-button" onClick={handleAdd}>Agregar al carro</Button>
                   </Card.Body>
                 </Card>
               </Link>
@@ -78,7 +67,6 @@ const Juegos = () => {
         </Row>
       </Container>
 
->>>>>>> 170ea41935dfb594453dc9e59742e4698d3a0b1c
     </Container>
   );
 };

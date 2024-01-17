@@ -1,10 +1,14 @@
-import { Fragment } from "react"
+import { Fragment , useContext} from "react"
+import CartContext from "../context/cart/CartContext"
 import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap"
 import { Outlet, Link } from "react-router-dom"
 import CartIcon from "../components/cartComponents/cartDropDawn/cartIcon/CartIcon"
+import CartDropdown from "../components/cartComponents/cartDropDawn/CartDropDown"
 
 
 const NavBarMain = () => {
+    const { isCartOpen } = useContext(CartContext)
+    console.log(isCartOpen);
     return (
         <Fragment>
             <Navbar expand="lg" className="custom-nav">
@@ -33,9 +37,9 @@ const NavBarMain = () => {
                             </NavDropdown>
                             <Nav.Link as={Link} to='/soporte'>Soporte</Nav.Link>
                             <Nav.Link as={Link} to='/login'><i className="bi bi-person-circle custom-login"></i></Nav.Link>
-                            <Nav.Link as={Link} to='/login'><i className="bi bi-cart"></i></Nav.Link>
                             {/* <Nav.Link as={Link} to='/registrate'>Registrate</Nav.Link> */}
-                            <Nav.Link as={Link} to='/login'>{CartIcon}</Nav.Link>
+                            <CartIcon></CartIcon>
+                            {isCartOpen && <CartDropdown />}
                             
                         </Nav>
                     </Navbar.Collapse>

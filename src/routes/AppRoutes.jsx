@@ -9,6 +9,7 @@ import Login from '../views/Login';
 import LoginRegister from '../views/LoginRegister';
 import JuegoId from '../views/JuegoId';
 import FiguraId from '../views/FiguraId';
+import Checkout from '../components/checkout/Checkout.jsx';
 
 const AppRoutes = () => {
     return (
@@ -22,7 +23,7 @@ const AppRoutes = () => {
                 <Route path='registrate' element={<LoginRegister  />} />
                 <Route path='juegos/:id' element={<JuegoId  />} />
                 <Route path='figuras/:id' element={<FiguraId  />} />
-                
+                <Route path='checkout' element= { <Checkout/>} />               
                 <Route path='*' element={<Navigate replace='/' />} />
 
             </Route>

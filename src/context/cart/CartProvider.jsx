@@ -1,47 +1,44 @@
-import { CartContext } from "./cartContext";
+import CartContext from "./CartContext";
 import { useReducer } from "react";
-import { addCartItem, removecartItem, clearCartItem } from "./cartTFunction";
+import { addCartItem, clearCartItem } from "../cart/cartTFunction";
 import cartReducer from "./cartReducer";
 
 
-export const CartProvider = ({children}) => {
+
+const CartProvider = ({children}) => {
 
     const initialState = {
         isCartOpen: false,
         cartItems: [],
-        CartCount: 0,
+        cartCount: 0,
         cartTotal: 0
     }
 
-    const [{ isCartOpen,
-        cartItems,
-        CartCount,
-        cartTotal
-    }, dispatch] = useReducer("cartReducer", initialState)
+    const [{isCartOpen, cartItems, cartCount, cartTotal}, dispatch] = useReducer(cartReducer, initialState)
 
-    //funcionaes del carrito de compras 
 
+    //funciones 
     const updateCartItemReducer = (newCartItems) => {
-        const newCartCount = newCartItems.reduce((total, cartItem) => total + cartItem.quantity, 0)
-        const newCartTotal = newCartItems.reduce((total, cartItem) => total + cartItem.quantity * cartItem.precio, 0)
+        const newCartCount = newCartItems.reduce((total, cartItem) => total + cartItem.quantity, 0);
+        const newCartTotal = newCartItems.reduce((total, cartItem) => total + cartItem.quantity * cartItem.price, 0);
 
         dispatch({
             type: "SET_CART_ITEMS",
             payload: {
                 cartItems: newCartItems,
-                CartCount: newCartCount,
+                cartCount: newCartCount,
                 cartTotal: newCartTotal
             }
         })
     }
 
-    const addItemtoCart = (productToAdd) => {
+    const addItemToCart = (productToAdd) => {
         const newCartItems = addCartItem(cartItems, productToAdd)
         updateCartItemReducer(newCartItems)
     }
 
     const removeItemToCart = (cartItemToRemove) => {
-        const newCartItems = removecartItem(cartItems, cartItemToRemove)
+        const newCartItems = removeCartItem(cartItems, cartItemToRemove)
         updateCartItemReducer(newCartItems)
     }
 
@@ -52,7 +49,7 @@ export const CartProvider = ({children}) => {
 
     const clearItemToCheckout = () => {
         dispatch({
-            type: "CLEAR_CHEACKOUT",
+            type: "CLEAR_CHECKOUT"
         })
     }
 
@@ -63,14 +60,21 @@ export const CartProvider = ({children}) => {
         })
     }
 
-    return (
-        <CartContext.Provider value={{addItemtoCart,
-            removeItemToCart, 
-            clearCartItem,
-            clearItemToCheckout, 
-            isCartOpen,
-            cartItems,
-            CartCount, 
-            cartTotal}}>{children}</CartContext.Provider>
-    )
+
+
+
+  return (
+    <CartContext.Provider value={{
+        addItemToCart,
+        clearItemToCart,
+        clearItemToCheckout,
+        setIsCartOpen,
+        isCartOpen,
+        cartItems,
+        cartCount,
+        cartTotal
+    }}>{children}</CartContext.Provider>
+  )
 }
+
+export default CartProvider
