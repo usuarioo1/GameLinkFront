@@ -26,11 +26,11 @@ const JuegoId = () => {
     <div>
       {juego ? (
         <>
-        <div class="card2">
+        <div className="card2">
           <h2>{juego.nombre}</h2>
           <img src={juego.img} alt={juego.nombre} />
-          <p class="description">{juego.descripcion}</p>
-          <p class="price">${juego.precio}</p>
+          <p className="description">{juego.descripcion}</p>
+          <p className="price">${juego.precio}</p>
           {/* Mostrar otros detalles según sea necesario */}
           </div>
           
