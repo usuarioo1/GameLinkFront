@@ -1,13 +1,16 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import axiosClient from '../config/axiosClient';
 import '../css/funkoId.css'
+import { GamesContext } from '../context/games/gamesContext';
+
 
 const FiguraId = () => {
 
     const { id } = useParams();
     console.log("ID de la figura:", id);
     const [funko, setFunko] = useState(null);
+    
 
     useEffect(() => {
         const fetchFunkoDetails = async () => {
