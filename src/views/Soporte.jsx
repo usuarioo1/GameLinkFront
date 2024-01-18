@@ -1,28 +1,42 @@
-import React from 'react'
-import { Container } from 'react-bootstrap'
-import '../css/soporte.css'
+import React from 'react';
+import { Container } from 'react-bootstrap';
+import '../css/soporte.css';
 
 const Soporte = () => {
   return (
     // eslint-disable-next-line react/jsx-no-undef
-    <Container className='justify-content-center mt-5'>
-
-    <div class="form-container">
-      <form class="form">
-        <div class="form-group">
-          <label for="email">Company Email</label>
-          <input required="" name="email" id="email" type="text"/>
-        </div>
-        <div class="form-group">
-          <label for="textarea">How Can We Help You?</label>
-          <textarea required="" cols="50" rows="10" id="textarea" name="textarea">          </textarea>
-        </div>
-        <button type="submit" class="form-submit-btn">Submit</button>
-      </form>
-    </div>
-
-    </Container>
-  )
+    <div class="testbox">
+        <form action="/">
+          <p id="h1">Feedback Form</p>
+          <p id="h4">Name</p>
+          <input placeholder="Enter your full name" type="text" class="input" />
+          <p id="h4">Email<span>*</span></p>
+          <input placeholder="Enter your email" type="text" class="input" />
+          <p id="h4">What is your overall impression?<span>*</span></p>
+          <table>
+            <tbody><tr>
+              <th class="first-col"></th>
+              <th>Very Satisfied</th>
+              <th>Satisfied</th>
+              <th>Unsatisfied</th>
+              <th>Very Unsatisfied</th>
+            </tr>
+            <tr>
+              <td class="first-col">Professional</td>
+              <td><input name="point#2" value="none" type="radio" /></td>
+              <td><input name="point#2" value="none" type="radio" /></td>
+              <td><input name="point#2" value="none" type="radio" /></td>
+              <td><input name="point#2" value="none" type="radio" /></td>
+            </tr>
+          </tbody></table>
+          <p id="h4">Feel free to add any other comments or suggestions:</p>
+          <textarea rows="5"></textarea>
+          <div class="btn-block">
+            <button href="/" type="submit">Send Feedback</button>
+          </div>
+        </form>
+      </div>
+  );
 }
 
-export default Soporte
+export default Soporte;

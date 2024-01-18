@@ -2,7 +2,7 @@ import { Button, Card, Container, Col, Row } from 'react-bootstrap';
 import { useContext, useEffect, useState } from 'react'
 import { FunkoContext } from '../context/funkoPops/FunkoContext'
 import { Link } from 'react-router-dom';
-import  CartContext  from '../context/cart/CartContext';
+import CartContext from '../context/cart/cartContext';
 
 
 const Figuras = () => {

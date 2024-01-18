@@ -1,39 +1,45 @@
-import React from 'react';
-import { Card, ListGroup, Button } from 'react-bootstrap';
+import { useContext } from "react";
+import CartContext from "../../context/cart/cartContext";
+import CheckoutItem from "./CheckoutItem";
+
+//import Paypal from "../../components/paypalComponents/Paypal";
+
 
 const Checkout = () => {
- const products = [
-    { id: 1, name: 'Producto 1', price: 100 },
-    { id: 2, name: 'Producto 2', price: 200 },
-    { id: 3, name: 'Producto 3', price: 300 },
- ];
 
- const calculateTotal = () => {
-    return products.reduce((total, product) => total + product.price, 0);
- };
+    const {cartItems, cartTotal} = useContext(CartContext)
+    console.log(cartItems)
+    
 
- return (
-    <Card>
-      <Card.Header>
-        <strong>Resumen de Productos</strong>
-      </Card.Header>
-      <ListGroup variant="flush">
-        {products.map((product) => (
-          <ListGroup.Item key={product.id}>
-            <strong>{product.name}</strong> - ${product.price}
-          </ListGroup.Item>
-        ))}
-        <ListGroup.Item>
-          <strong>Total:</strong> ${calculateTotal()}
-        </ListGroup.Item>
-      </ListGroup>
-      <Card.Body>
-        <Button variant="primary" type="submit">
-          Confirmar Compra
-        </Button>
-      </Card.Body>
-    </Card>
- );
+  return (
+    <div className="checkout-container">
+      <div className="checkout-header">
+        <div className="header-block">
+          <span>Product</span>
+        </div>
+        <div className="header-block">
+          <span>Description</span>
+        </div>
+        <div className="header-block">
+          <span>Quantity</span>
+        </div>
+        <div className="header-block">
+          <span>Price</span>
+        </div>
+        <div className="header-block">
+          <span>Remove</span>
+        </div>
+      </div>
+      { cartItems.map((cartItem) => (
+        <CheckoutItem key={cartItem._id} cartItem={cartItem} stock={cartItem.stock}/>
+      ))}
+      <span className="total">Total: ${cartTotal}</span>
+
+      {/* //{cartItems.length ? <Paypal /> : null} */}
+      
+    
+    </div>
+  );
 };
 
 export default Checkout;
