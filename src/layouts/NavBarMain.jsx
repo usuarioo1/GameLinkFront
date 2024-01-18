@@ -1,11 +1,16 @@
-import { Fragment } from "react"
+import { Fragment, useContext } from "react"
+import CartContext from "../context/cart/cartContext"
 import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap"
 import { Outlet, Link } from "react-router-dom"
 import CartIcon from "../components/cartComponents/cartDropDawn/cartIcon/CartIcon"
+import CartDropdown from "../components/cartComponents/cartDropDawn/CartDropDown"
+
 
 
 
 const NavBarMain = () => {
+    const { isCartOpen } = useContext(CartContext)
+    console.log(isCartOpen);
     return (
         <Fragment>
             <Navbar expand="lg" className="custom-nav">
@@ -26,18 +31,14 @@ const NavBarMain = () => {
                     <Navbar.Collapse id="basic-navbar-nav" className="custom-justify">
                         <Nav className="">
                             <Nav.Link as={Link} to='/'>Home</Nav.Link>
-                            <NavDropdown title="Productos" id="basic-nav-dropdown">
-                                <NavDropdown.Item as={Link} to='/juegos'>Juegos</NavDropdown.Item>
-                                <NavDropdown.Item as={Link} to='/figuras'>
-                                    Figuras
-                                </NavDropdown.Item>
-                            </NavDropdown>
+                            <Nav.Link as={Link} to='/juegos'>Productos</Nav.Link>
                             <Nav.Link as={Link} to='/soporte'>Soporte</Nav.Link>
                             <Nav.Link as={Link} to='/login'><i className="bi bi-person-circle custom-login"></i></Nav.Link>
                             {/* <Nav.Link as={Link} to='/registrate'>Registrate</Nav.Link> */}
-                            {/* //<Nav.Link as={Link} to='/checkout'>CheckOut</Nav.Link> */}
-                            <Nav.Link>{<CartIcon />}</Nav.Link>
-                            
+                            <CartIcon />
+                            {isCartOpen && <CartDropdown />}
+
+
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

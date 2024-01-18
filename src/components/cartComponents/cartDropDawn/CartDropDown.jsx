@@ -1,9 +1,9 @@
-import { CartContext } from '../../../context/cart/cartContext';
+import CartContext from '../../../context/cart/cartContext';
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom'
-import { Button } from 'react-bootstrap';
+import { Button } from "@mui/material";
 import CartItem from '../cartItem/CartItem';
-import '../../../components/cartComponents/cartDropDawn/CartDropDown.css'
+import './CartDropdown.scss'
 
 const CartDropdown = () => {
     const navigate = useNavigate()

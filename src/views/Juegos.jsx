@@ -2,19 +2,22 @@ import { Button, Card, Container, Col, Row } from 'react-bootstrap';
 import { useContext, useEffect, useState } from 'react';
 import { GamesContext } from '../context/games/gamesContext';
 import { Link } from 'react-router-dom';
-import { CartContext } from '../context/cart/cartContext';
+import CartContext from '../context/cart/cartContext';
 import '../css/juegosId.css';
 
 const Juegos = () => {
-
   const { getGames, games } = useContext(GamesContext);
   const { addItemToCart, cartCount } = useContext(CartContext);
 
   // Declarar el estado antes de su uso
   const [data, setData] = useState([]);
-  
 
-  const handleAdd = () => { if(cartCount < product.stock) addItemToCart(product[0])}
+  const handleAdd = (product) => {
+    if (cartCount < product.stock) {
+      addItemToCart(product);
+    }
+  };
+
   useEffect(() => {
     console.log("Cantidad de elementos en el carrito:", cartCount);
   }, [cartCount]);
@@ -26,7 +29,6 @@ const Juegos = () => {
   useEffect(() => {
     console.log("Cart count from context:", cartCount);
   }, [cartCount]);
-
 
   useEffect(() => {
     const axiosGames = async () => {
@@ -50,7 +52,6 @@ const Juegos = () => {
         <Row>
           {data.map((product) => (
             <Col key={product._id} className="mb-4">
-
               <Card className="custom-card mt-5" style={{ width: '18rem', height: '23rem' }} as={'div'}>
                 <Link to={`/juegos/${product._id}`} className="card-link">
                   <Card.Img variant="top" src={product.img} alt="" />
@@ -61,13 +62,16 @@ const Juegos = () => {
                   {product.stock === 0 ? (
                     <h4>sin stock</h4>
                   ) : (
-                    <Button variant="primary" className="custom-button" onClick={() => handleAdd(product) }>
-                      Agregar al carro
+                    <Button 
+                      variant="primary" 
+                      className="custom-button" 
+                      onClick={() => handleAdd(product)}
+                    >
+                      Agregar al carrito
                     </Button>
                   )}
                 </Card.Body>
               </Card>
-
             </Col>
           ))}
         </Row>
