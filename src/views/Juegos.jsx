@@ -4,6 +4,7 @@ import { GamesContext } from '../context/games/gamesContext';
 import { Link } from 'react-router-dom';
 import CartContext from '../context/cart/cartContext';
 import '../css/juegosId.css';
+import Swal from 'sweetalert2';
 
 const Juegos = () => {
   const { getGames, games } = useContext(GamesContext);
@@ -43,6 +44,29 @@ const Juegos = () => {
     axiosGames();
   }, []);
 
+  const showSuccessToast = () => {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: "bottom-start",
+      showConfirmButton: false,
+      timer: 1500,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
+      }
+    });
+
+    Toast.fire({
+      icon: "success",
+      title: "Agregado al carrito"
+    });
+  };
+
+  // Llama a la función cuando desees mostrar el toast
+  //showSuccessToast();
+
+
   return (
     <Container className='justify-content-center mt-5'>
       <Container>
@@ -62,10 +86,13 @@ const Juegos = () => {
                   {product.stock === 0 ? (
                     <h4>sin stock</h4>
                   ) : (
-                    <Button 
-                      variant="primary" 
-                      className="custom-button" 
-                      onClick={() => handleAdd(product)}
+                    <Button
+                      variant="primary"
+                      className="custom-button"
+                      onClick={() => {
+                        handleAdd(product);
+                        showSuccessToast();  // Llama a showSuccessToast después de agregar al carrito
+                      }}
                     >
                       Agregar al carrito
                     </Button>

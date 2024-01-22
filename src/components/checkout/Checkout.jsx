@@ -9,6 +9,7 @@ const Checkout = () => {
 
     const {cartItems, cartTotal} = useContext(CartContext)
     console.log(cartItems)
+    console.log("cartTotal:", cartTotal);
     
 
   return (
@@ -33,8 +34,10 @@ const Checkout = () => {
       { cartItems.map((cartItem) => (
         <CheckoutItem key={cartItem._id} cartItem={cartItem} stock={cartItem.stock}/>
       ))}
+      
       <span className="total">Total: ${cartTotal}</span>
-
+      
+        {console.log(cartTotal)}
       {/* //{cartItems.length ? <Paypal /> : null} */}
       
     

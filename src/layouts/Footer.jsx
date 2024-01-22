@@ -1,6 +1,8 @@
 // Importa las bibliotecas necesarias
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import Soporte from '../views/Soporte';
 
 // Define el componente Footer
 const Footer = () => {
@@ -10,8 +12,10 @@ const Footer = () => {
         <Row>
           <Col md={6}>
             <h5>Información de Contacto</h5>
-            <p>Dirección: 123 Calle Principal, Ciudad</p>
-            <p>Email: info@example.com</p>
+            <p>Tienda Online</p>
+            <Link to={'/soporte'}>
+            <p>Soportte</p>
+            </Link>
           </Col>
           <Col md={6}>
             <h5>Enlaces Útiles</h5>
@@ -25,7 +29,7 @@ const Footer = () => {
         </Row>
         <Row className="mt-3">
           <Col>
-            <p>&copy; 2023 Tu Empresa. Todos los derechos reservados.</p>
+          <p>Todos los derechos reservados &copy; 2024 GameLink | Marca Registrada &reg;</p>
           </Col>
         </Row>
       </Container>
@@ -33,5 +37,4 @@ const Footer = () => {
   );
 };
 
-// Exporta el componente Footer
 export default Footer;

@@ -3,10 +3,7 @@ import { useReducer } from "react";
 import { addCartItem, clearCartItem, removeCartItem } from "../cart/cartTFunction";
 import cartReducer from "./cartReducer";
 
-
-
 const CartProvider = ({ children }) => {
-
     const initialState = {
         isCartOpen: false,
         cartItems: [],
@@ -14,13 +11,28 @@ const CartProvider = ({ children }) => {
         cartTotal: 0
     }
 
-    const [{ isCartOpen, cartItems, cartCount, cartTotal }, dispatch] = useReducer(cartReducer, initialState)
+    const [{ isCartOpen, cartItems, cartCount, cartTotal }, dispatch] = useReducer(cartReducer, initialState);
 
+    // Impresiones de consola
+    console.log("Cart Items Length:", cartItems.length);
+    console.log("Cart Total Initial:", cartTotal);
 
-    //funciones 
+    // Funciones
     const updateCartItemReducer = (newCartItems) => {
         const newCartCount = newCartItems.reduce((total, cartItem) => total + cartItem.quantity, 0);
-        const newCartTotal = newCartItems.reduce((total, cartItem) => total + cartItem.quantity * cartItem.price, 0);
+        const newCartTotal = newCartItems.reduce((total, cartItem) => {
+            const itemQuantity = Number(cartItem.quantity);
+            const itemPrice = Number(cartItem.precio);
+
+            if (isNaN(itemQuantity) || isNaN(itemPrice)) {
+                console.error("Invalid quantity or price:", cartItem);
+                return total;
+            }
+
+            return total + itemQuantity * itemPrice;
+        }, 0);
+
+        console.log("New Cart Total:", newCartTotal);
 
         dispatch({
             type: "SET_CART_ITEMS",
@@ -29,21 +41,36 @@ const CartProvider = ({ children }) => {
                 cartCount: newCartCount,
                 cartTotal: newCartTotal
             }
-        })
+        });
     }
 
     const addItemToCart = (productToAdd) => {
-        const newCartItems = addCartItem(cartItems, productToAdd)
-        updateCartItemReducer(newCartItems)
+        const newCartItems = addCartItem(cartItems, productToAdd);
+
+        // Impresiones de consola
+        console.log("Added Item:", productToAdd);
+        console.log("New Cart Items:", newCartItems);
+
+        updateCartItemReducer(newCartItems);
     }
 
     const removeItemToCart = (cartItemToRemove) => {
-        const newCartItems = removeCartItem(cartItems, cartItemToRemove)
-        updateCartItemReducer(newCartItems)
+        const newCartItems = removeCartItem(cartItems, cartItemToRemove);
+
+        // Impresiones de consola
+        console.log("Removed Item:", cartItemToRemove);
+        console.log("New Cart Items:", newCartItems);
+
+        updateCartItemReducer(newCartItems);
     }
 
     const clearItemToCart = (cartItemToClear) => {
         const newCartItems = clearCartItem(cartItems, cartItemToClear);
+
+        // Impresiones de consola
+        console.log("Cleared Item:", cartItemToClear);
+        console.log("New Cart Items:", newCartItems);
+
         updateCartItemReducer(newCartItems);
     };
 
@@ -60,7 +87,7 @@ const CartProvider = ({ children }) => {
         });
     };
 
-        return (
+    return (
         <CartContext.Provider value={{
             addItemToCart,
             clearItemToCart,
