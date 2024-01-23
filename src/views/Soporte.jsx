@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap';
 import '../css/soporte.css';
 import axios from 'axios';
 import Swal from 'sweetalert2'
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 

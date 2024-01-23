@@ -4,8 +4,7 @@ import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 //providers
 import { GamesProvider } from './context/games/GamesProvider.jsx'
-import { FunkoProvider } from './context/funkoPops/FunkoProvider.jsx'
-import  CartProvider  from './context/cart/CartProvider.jsx'
+import CartProvider from './context/cart/CartProvider.jsx'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -14,11 +13,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
 
       <GamesProvider>
-        <FunkoProvider>
-          <CartProvider>
+
+        <CartProvider>
           <App />
-          </CartProvider>
-        </FunkoProvider>
+        </CartProvider>
+
       </GamesProvider>
 
     </BrowserRouter>

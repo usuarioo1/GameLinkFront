@@ -1,8 +1,7 @@
 import { useContext } from "react";
 import CartContext from "../../context/cart/cartContext";
 import CheckoutItem from "./CheckoutItem";
-
-//import Paypal from "../../components/paypalComponents/Paypal";
+import {Paypal} from '../../payPal/Paypal'
 
 
 const Checkout = () => {
@@ -38,7 +37,7 @@ const Checkout = () => {
       <span className="total">Total: ${cartTotal}</span>
       
         {console.log(cartTotal)}
-      {/* //{cartItems.length ? <Paypal /> : null} */}
+      {cartItems.length ? <Paypal /> : null}
       
     
     </div>

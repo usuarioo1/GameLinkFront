@@ -47,9 +47,16 @@ export const GamesProvider = ({ children }) => {
         }
     }
 
+    const reduceStock = async(cartItems) => {
+
+        const productos = {cartItems}
+        const result = await axiosClient.put('/reduceStock', productos)
+        console.log(result)
+    }
+
     return (
         <div>
-            <GamesContext.Provider value={{getGames,getGameById, products: gamesState.products }}>{children}</GamesContext.Provider>
+            <GamesContext.Provider value={{getGames,getGameById, products: gamesState.products, reduceStock }}>{children}</GamesContext.Provider>
         </div>
     )
     }
