@@ -67,7 +67,7 @@ const Soporte = () => {
           </p>
           <p id="h4">Nombre</p>
           <input
-            placeholder="tu nombre"
+            placeholder="Indicanos tú nombre 👾"
             type="text"
             className="input"
             name="nombre"
@@ -76,24 +76,24 @@ const Soporte = () => {
           />
           <p id="h4">Email<span>*</span></p>
           <input
-            placeholder="dejanos tu correo...👍"
+            placeholder="dejanos tu correo...📧"
             type="text"
             className="input"
             name="mail"
             value={formData.mail}
             onChange={handleInputChange}
           />
-          <p id="h4">¿Cómo fue tu experiencia comprando en la página?<span>*</span></p>
+          <p id="h4">¿Que tipo de ayuda necesitas?<span>*</span></p>
           <table>
             <tbody>
               <tr>
                 <th className="first-col"></th>
-                <th>Buenisima, la recominedo!</th>
-                <th>Buena</th>
-                <th>Podría mejorar</th>
+                <th>Ayuda con mi cuenta</th>
+                <th>Ayuda con una compra</th>
+                <th>Contacta con un ejecutivo</th>
               </tr>
               <tr>
-                <td className="first-col">Professional</td>
+                <td className="first-col">Asunto</td>
                 <td><input name="point#2" value="none" type="radio" /></td>
                 <td><input name="point#2" value="none" type="radio" /></td>
                 <td><input name="point#2" value="none" type="radio" /></td>
@@ -110,7 +110,7 @@ const Soporte = () => {
             onChange={handleInputChange}
           ></textarea>
           <div className="btn-block">
-            <button type="submit" onClick={showAlert}>Send Feedback</button>
+            <button type="submit" onClick={showAlert}>Enviar</button>
 
             {message &&<p>{message}</p>}
           </div>

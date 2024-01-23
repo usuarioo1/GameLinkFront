@@ -3,17 +3,19 @@ p {
     padding: 0;
     margin: 0;
     outline: none;
-    font-family: Roboto, Arial, sans-serif;
-    font-size: 14px;
-    color: #000;
-    line-height: 13px;
+    font-family:  Helvetica;
+    font-size: 16px;
+    color: white;
+    line-height: 25px;
     border-radius: 10px;
 }
 
+
 #h1 {
-    font-size: 24px;
-    font-weight: 400;
-    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+    text-align: left;
+    padding-bottom: 25px;
 }
 
 #h4 {
