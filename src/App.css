@@ -45,3 +45,14 @@
 .card-link{
     text-decoration: none !important;
 }
+
+/* // footer */
+
+.contact{
+    padding-top: 20px;
+}
+
+footer li a {
+    text-decoration: none;
+    color: white;
+}

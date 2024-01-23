@@ -1,15 +1,15 @@
 import { useContext } from "react";
 import CartContext from "../../context/cart/cartContext";
 import CheckoutItem from "./CheckoutItem";
-import {Paypal} from '../../payPal/Paypal'
+import { Paypal } from '../../payPal/Paypal'
 
 
 const Checkout = () => {
 
-    const {cartItems, cartTotal} = useContext(CartContext)
-    console.log(cartItems)
-    console.log("cartTotal:", cartTotal);
-    
+  const { cartItems, cartTotal } = useContext(CartContext)
+  console.log(cartItems)
+  console.log("cartTotal:", cartTotal);
+
 
   return (
     <div className="checkout-container">
@@ -30,16 +30,17 @@ const Checkout = () => {
           <span>Remove</span>
         </div>
       </div>
-      { cartItems.map((cartItem) => (
-        <CheckoutItem key={cartItem._id} cartItem={cartItem} stock={cartItem.stock}/>
+      {cartItems.map((cartItem) => (
+        <CheckoutItem key={cartItem._id} cartItem={cartItem} stock={cartItem.stock} />
       ))}
-      
+
       <span className="total">Total: ${cartTotal}</span>
+
+      {console.log(cartTotal)}
       
-        {console.log(cartTotal)}
       {cartItems.length ? <Paypal /> : null}
-      
-    
+
+
     </div>
   );
 };

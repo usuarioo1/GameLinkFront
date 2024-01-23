@@ -1,8 +1,7 @@
 // Importa las bibliotecas necesarias
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import Soporte from '../views/Soporte';
+
 
 // Define el componente Footer
 const Footer = () => {
@@ -11,17 +10,16 @@ const Footer = () => {
       <Container>
         <Row>
           <Col md={6}>
-            <h5>Información de Contacto</h5>
-            <p>Tienda Online</p>
-            <Link to={'/soporte'}>
-            <p>Soportte</p>
-            </Link>
+            <h5   className='contact'>Información de Contacto <i class="bi bi-info-circle-fill"></i></h5>
+            <p>Teléfono <i class="bi bi-telephone-fill"></i> - +56 9861 5487</p>
+            <p>Correo <i class="bi bi-envelope-at-fill"></i> - contacto@gamelink.com</p>
+            
           </Col>
           <Col md={6}>
-            <h5>Enlaces Útiles</h5>
+            <h5 className='contact'>Enlaces Útiles <i class="bi bi-hand-index-fill"></i></h5>
             <ul>
               <li><a href="#">Inicio</a></li>
-              <li><a href="#">Acerca de Nosotros</a></li>
+              <li><a href="#">Noticias</a></li>
               <li><a href="#">Servicios</a></li>
               <li><a href="#">Contacto</a></li>
             </ul>
