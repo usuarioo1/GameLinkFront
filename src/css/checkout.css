@@ -1,0 +1,46 @@
+/* checkout.css */
+
+.checkout-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.checkout-table th,
+.checkout-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.checkout-table th {
+    background-color: #f2f2f2;
+}
+
+.total-container {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.total-text {
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 30px;
+    margin-bottom: 20px;
+}
+
+/* Style for Paypal component (replace this with your actual Paypal button styles) */
+.Paypal {
+    margin-top: 20px;
+}
+
+/* Add more styles as needed */

@@ -2,7 +2,7 @@ import "./CartItem.scss"
 const CartItem = ({cartItem}) => {
 
     const {img, nombre, stock, precio} = cartItem
-
+// son los item dentro del cartDrpdawn
   return (
     <div className="cart-item-container">
         <img src={img} alt={nombre}/>

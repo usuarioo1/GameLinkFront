@@ -2,6 +2,9 @@ import { useContext } from "react";
 import CartContext from "../../context/cart/cartContext";
 import CheckoutItem from "./CheckoutItem";
 import { Paypal } from '../../payPal/Paypal'
+import '../../css/checkout.css'
+import { Button, Container } from "react-bootstrap";
+
 
 
 const Checkout = () => {
@@ -9,39 +12,28 @@ const Checkout = () => {
   const { cartItems, cartTotal } = useContext(CartContext)
   console.log(cartItems)
   console.log("cartTotal:", cartTotal);
+  
 
 
   return (
+    <Container className="mt-5">
     <div className="checkout-container">
-      <div className="checkout-header">
-        <div className="header-block">
-          <span>Product</span>
-        </div>
-        <div className="header-block">
-          <span>Description</span>
-        </div>
-        <div className="header-block">
-          <span>Quantity</span>
-        </div>
-        <div className="header-block">
-          <span>Price</span>
-        </div>
-        <div className="header-block">
-          <span>Remove</span>
-        </div>
+      <table className="checkout-table">
+        <h1>Productos en tu carrito:</h1>
+        <tbody>
+          {cartItems.map((cartItem) => (
+            <CheckoutItem key={cartItem._id} cartItem={cartItem} stock={cartItem.stock} />
+          ))}
+        </tbody>
+      </table>
+
+      <div className="total-container">
+        <div className="total-text">Total: ${cartTotal}</div>
       </div>
-      {cartItems.map((cartItem) => (
-        <CheckoutItem key={cartItem._id} cartItem={cartItem} stock={cartItem.stock} />
-      ))}
 
-      <span className="total">Total: ${cartTotal}</span>
-
-      {console.log(cartTotal)}
-      
-      {cartItems.length ? <Paypal /> : null}
-
-
+      <Paypal />
     </div>
+    </Container>
   );
 };
 

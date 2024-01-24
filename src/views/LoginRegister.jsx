@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Container } from 'react-bootstrap';
 import axios from 'axios';
 
 const LoginRegister = () => {
@@ -33,7 +33,8 @@ const LoginRegister = () => {
     };
 
     return (
-        <Form onSubmit={handleSubmit}>
+        <Container >
+        <Form className='mt-5' style={{ maxWidth: '400px', margin: 'auto', height:'500px' }} onSubmit={handleSubmit}>
             <Form.Group controlId="formName">
                 <Form.Label>Nombre</Form.Label>
                 <Form.Control
@@ -44,7 +45,7 @@ const LoginRegister = () => {
                     onChange={handleInputChange}
                 />
             </Form.Group>
-
+    
             <Form.Group controlId="formEmail">
                 <Form.Label>Email</Form.Label>
                 <Form.Control
@@ -55,7 +56,7 @@ const LoginRegister = () => {
                     onChange={handleInputChange}
                 />
             </Form.Group>
-
+    
             <Form.Group controlId="formPassword">
                 <Form.Label>Contraseña</Form.Label>
                 <Form.Control
@@ -66,13 +67,15 @@ const LoginRegister = () => {
                     onChange={handleInputChange}
                 />
             </Form.Group>
-
-            <Button variant="primary" type="submit">
+    
+            <Button className='mt-5' variant="primary" type="submit" style={{marginLeft:'100px'}}>
                 Registrarse
             </Button>
-
+    
             {message && <p>{message}</p>}
         </Form>
+    </Container>
+    
     );
 };
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Button, Container, Row, Col } from 'react-bootstrap';
+import { Form, Button, Container, Row, Col,Card } from 'react-bootstrap';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
@@ -71,15 +71,19 @@ const Login = ({ onLogin }) => {
                   required
                 />
               </Form.Group>
+              <Container className="d-flex flex-column align-items-center">
+                <Button variant="primary" type="submit" className="mt-3 mb-3">
+                  Iniciar Sesión
+                </Button>
+                
+                <Card.Title>No tienes cuenta?, registrate!</Card.Title>
 
-              <Button variant="primary" type="submit" className="mt-3">
-                Iniciar Sesión
-              </Button>
-              <Link to={'/registrate'} >
-              <Button variant="primary" type="submit" className="mt-3">
-                Registrate
-              </Button>
-              </Link>
+                <Link to={'/registrate'} >
+                  <Button variant="primary" type="submit" className="mt-3">
+                    Registrate
+                  </Button>
+                </Link>
+              </Container>
             </Form>
           </div>
         </Col>
