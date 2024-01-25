@@ -72,14 +72,14 @@ const Login = ({ onLogin }) => {
                 />
               </Form.Group>
               <Container className="d-flex flex-column align-items-center">
-                <Button variant="primary" type="submit" className="mt-3 mb-3">
+                <Button variant="dark" type="submit" className="mt-3 mb-3">
                   Iniciar Sesión
                 </Button>
                 
                 <Card.Title>No tienes cuenta?, registrate!</Card.Title>
 
                 <Link to={'/registrate'} >
-                  <Button variant="primary" type="submit" className="mt-3">
+                  <Button variant="secondary" type="submit" className="mt-3">
                     Registrate
                   </Button>
                 </Link>

@@ -1,0 +1,19 @@
+.accordion-item:first-of-type .accordion-button{
+
+    color: white !important;
+    background-color: #40C1BD !important;
+
+}
+
+.accordion-item:last-of-type .accordion-button{
+
+    color: white !important;
+    background-color: #40C1BD !important;
+
+}
+.accordion-item :nth-of-type(odd) .accordion-button{
+
+    color: white !important;
+    background-color: #40C1BD !important;
+
+}

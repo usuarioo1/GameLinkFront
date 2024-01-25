@@ -68,7 +68,7 @@ const LoginRegister = () => {
                 />
             </Form.Group>
     
-            <Button className='mt-5' variant="primary" type="submit" style={{marginLeft:'100px'}}>
+            <Button className='mt-5' variant="dark" type="submit" style={{marginLeft:'100px'}}>
                 Registrarse
             </Button>
     
