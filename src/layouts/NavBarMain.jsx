@@ -1,6 +1,6 @@
 import { Fragment, useContext } from "react"
-import CartContext from "../context/cart/cartContext"
-import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap"
+import CartContext from "../context/cart/CartContext"
+import { Container, Navbar, Nav } from "react-bootstrap"
 import { Outlet, Link } from "react-router-dom"
 import CartIcon from "../components/cartComponents/cartDropDawn/cartIcon/CartIcon"
 import CartDropdown from "../components/cartComponents/cartDropDawn/CartDropDown"
