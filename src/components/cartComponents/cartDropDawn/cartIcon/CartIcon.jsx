@@ -1,4 +1,4 @@
-import CartContext from '../../../../context/cart/cartContext';
+import CartContext from '../../../../context/cart/CartContext';
 import shopIcon from '../../../../assets/carro.svg';
 import { useContext } from 'react';
 import "./CartIcon.scss";
