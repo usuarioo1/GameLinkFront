@@ -1,8 +1,8 @@
 import { Button, Card, Container, Col, Row } from 'react-bootstrap';
 import { useContext, useEffect, useState } from 'react';
-import { GamesContext } from '../context/games/gamesContext';
+import { GamesContext } from '../context/games/GamesContext';
 import { Link } from 'react-router-dom';
-import CartContext from '../context/cart/cartContext';
+import CartContext from '../context/cart/CartContext';
 import '../css/juegosId.css';
 import Swal from 'sweetalert2';
 import Skeleton from 'react-loading-skeleton';
