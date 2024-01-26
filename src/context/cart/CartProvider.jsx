@@ -1,4 +1,4 @@
-import CartContext from "./cartContext";
+import CartContext from "./CartContext";
 import { useReducer } from "react";
 import { addCartItem, clearCartItem, removeCartItem } from "../cart/cartTFunction";
 import cartReducer from "./cartReducer";
