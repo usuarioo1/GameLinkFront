@@ -1,5 +1,5 @@
 
-import { GamesContext } from './gamesContext'
+import { GamesContext } from './GamesContext'
 import { useReducer } from 'react'
 import gameReducer from './GamesReducer'
 import axiosClient from '../../config/axiosClient'
