@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom';
 
 
 
-const Login = ({ onLogin }) => {
+const Login = () => {
+  
+
   const [mail, setMail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -21,8 +23,7 @@ const Login = ({ onLogin }) => {
     // Lógica para manejar el inicio de sesión en tu aplicación
     console.log('Usuario ha iniciado sesión:', userData);
 
-    // Llama al callback proporcionado por el componente padre
-    onLogin(userData);
+
   };
 
   const handleLogin = async (e) => {
@@ -32,9 +33,10 @@ const Login = ({ onLogin }) => {
         mail,
         password,
       });
-
-      if (response.status === 200) {
-        // Llama directamente a la función de inicio de sesión exitosa
+  
+      console.log('Respuesta del servidor:', response);
+  
+      if (response.status === 200 && response.data.user) {
         handleLoginSuccess(response.data.user);
       } else {
         console.error('Error en la autenticación:', response.data.message);
