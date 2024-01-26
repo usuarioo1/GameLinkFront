@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import CartContext from '../../context/cart/cartContext';
 import '../../css/checkoutItem.css'
-import { Button, Container } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 
 
 const CheckoutItem = ({ cartItem, stock }) => {

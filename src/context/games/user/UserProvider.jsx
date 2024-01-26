@@ -2,7 +2,6 @@ import React from 'react'
 import userContext from './userReducer'
 import { useReducer } from 'react'
 import axiosClient from '../../../config/axiosClient'
-import userReducer from './userReducer'
 import { useNavigate } from 'react-router-dom'
 
 const UserProvider = ({children}) => {

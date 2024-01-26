@@ -3,7 +3,7 @@ import CartContext from "../../context/cart/cartContext";
 import CheckoutItem from "./CheckoutItem";
 import { Paypal } from '../../payPal/Paypal'
 import '../../css/checkout.css'
-import { Button, Container } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 
 
 
