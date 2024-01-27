@@ -1,4 +1,4 @@
- # PROYECTO ECOMMERCE - GAMELINK
+ # PROYECTO ECOMMERCE - GAMELINK 🎮
 
 GAMELINK es tu destino definitivo para adquirir keys de videojuegos y comprar figuras Funko Pop, todo en un solo lugar y con increíbles descuentos. Ya sea que estés buscando expandir tu biblioteca de juegos o agregar a tu colección de Funko Pop, aquí encontrarás una amplia selección de productos a precios competitivos.
 
@@ -14,7 +14,7 @@ Variedad de Keys de Videojuegos: Desde los últimos lanzamientos hasta clásicos
 - Servicio Post Venta: Tu satisfacción es nuestra prioridad. Si tienes algún problema con tu compra, nuestro equipo de servicio post venta trabajará contigo para resolverlo de manera rápida y eficiente.
 
 
-## Tecnologías
+## Tecnologías ⚡
 
 Javascript - React - React Bootstrap - Node - Tailwind
 
@@ -22,16 +22,16 @@ Javascript - React - React Bootstrap - Node - Tailwind
 
 Asi vemos la interfaz en un primer vistazo
 
-![GitHub](./src/assets/screenshots/Captura1.JPG)
+![GitHub](./src/assets/screenshots/Captura1.PNG)
 
 
-![GitHub](./src/assets/img/Captura2.JPG)
+![GitHub](./src/assets/img/Captura2.PNG)
 
 
-![GitHub](./src/assets/img/Captura3.JPG)
+![GitHub](./src/assets/img/Captura3.png)
 
 
-![GitHub](./src/assets/img/Captura4.JPG)
+![GitHub](./src/assets/img/Captura4.PNG)
 
 
 
