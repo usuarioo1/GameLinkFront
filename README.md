@@ -25,13 +25,13 @@ Asi vemos la interfaz en un primer vistazo
 ![GitHub](./src/assets/screenshots/Captura1.PNG)
 
 
-![GitHub](./src/assets/img/Captura2.PNG)
+![GitHub](./src/assets/screenshots/Captura2.PNG)
 
 
-![GitHub](./src/assets/img/Captura3.png)
+![GitHub](./src/assets/screenshots/Captura3.png)
 
 
-![GitHub](./src/assets/img/Captura4.PNG)
+![GitHub](./src/assets/screenshots/Captura4.PNG)
 
 
 
