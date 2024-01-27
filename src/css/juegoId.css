@@ -22,3 +22,10 @@
 p{
     color: black;
 }
+
+.buttonCart{
+    background-color:#40C1BD !important;
+    margin-bottom: 10px;
+    border: #40C1BD;
+    height: 70px;
+}

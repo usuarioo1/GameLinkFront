@@ -69,14 +69,14 @@ const JuegoId = () => {
                     </Col>
                     <Col md={6}>
                       <h2 className='mt-5'>{juego.nombre}</h2>
-                      <p className="description mt-5 ">{juego.descripcion}gdfdg</p>
+                      <h5 className="description mt-5 ">{juego.descripcion}</h5>
                       <h3 className="price mt-5">${juego.precio}</h3>
                       <h4 className='stock mt-5' >Stock:{juego.stock}</h4>
                       {juego.stock === 0 ? (
                         <h4>sin stock</h4>
                       ) : (
                         <Button 
-                          className='mt-5' 
+                          className='mt-5 buttonCart' 
                           variant="primary"
                           onClick={() => handleAdd(juego)} // Agrega el producto al carrito al hacer clic
                         >
