@@ -106,6 +106,18 @@ button:hover {
     opacity: .9;
 }
 
+
+@media only screen and (max-width: 480px) { 
+    
+    .testbox{
+        padding: 20px;
+
+    }
+
+
+
+}
+
 @media (min-width: 568px) {
 
     th,
