@@ -28,6 +28,7 @@
     background-color: #40C1BD !important;
     color: white !important;
     padding: 5px;
+    font-size: 25px;
 }
 
 .custom-button{
@@ -58,3 +59,13 @@ footer li a {
     text-decoration: none;
     color: white;
 }
+
+.card p:last-child{
+
+    font-size: 25px;
+    color: white !important;
+    line-height: 80px;
+    
+}
+
+

@@ -76,7 +76,7 @@ const Juegos = () => {
       <Container>
         <h1 className='text-left'>Nuestro Catálogo</h1>
       </Container>
-      <Container className='d-flex justify-content-around mt-5'>
+      <Container className='d-flex justify-content-space-between mt-5'>
         <Row>
           {Array.from({ length: 28 }).map((_, index) => (
             <Col key={index} className='mb-4'>

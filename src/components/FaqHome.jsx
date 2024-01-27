@@ -28,7 +28,7 @@ export const FaqHome = () => {
                     </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="1">
-                    <Accordion.Header>Politica de reembolso</Accordion.Header>
+                    <Accordion.Header>Política de reembolso</Accordion.Header>
                     <Accordion.Body>
                         <ul>
                             <li>
@@ -75,7 +75,7 @@ export const FaqHome = () => {
                     <Accordion.Body>
                         <ul>
                             <li>
-                                <strong>Lamentamos informar que por el momento no contamos con sucursal física, y solo realizamos envios de las figuras a traves de Starken y las KEYS de los juegos vía correo</strong>
+                                <strong>Lamentamos informar que por el momento no contamos con sucursal física, y solo realizamos envíos de las figuras a través de Starken y las KEYS de los juegos vía correo</strong>
                             </li>
                         </ul>
 

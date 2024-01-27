@@ -24,7 +24,7 @@ const LoMasVendido = (props) => {
                             <Card.Text>
                                 <i className="bi bi-tag-fill"></i> $35.000
                             </Card.Text>
-                            <Button variant="primary" className='custom-button'>Agregar al carro</Button>
+                           
                         </Card.Body>
                     </Card>
 
@@ -35,7 +35,7 @@ const LoMasVendido = (props) => {
                             <Card.Text>
                                 <i className="bi bi-tag-fill"></i> $22.500
                             </Card.Text>
-                            <Button variant="primary" className='custom-button'>Agregar al carro</Button>
+                            
                         </Card.Body>
                     </Card>
 
@@ -46,7 +46,7 @@ const LoMasVendido = (props) => {
                             <Card.Text>
                                 <i className="bi bi-tag-fill"></i> $13.000
                             </Card.Text>
-                            <Button variant="primary" className='custom-button'>Agregar al carro</Button>
+                            
                         </Card.Body>
                     </Card>
 
@@ -54,10 +54,10 @@ const LoMasVendido = (props) => {
                         <Card.Img variant="top" src="https://cdn.discordapp.com/attachments/1176712497668030486/1182143217823645796/imagen_13.png?ex=659f4f2a&is=658cda2a&hm=14cbcd737dccd573f53b6300101ee858ddb6c045739dd206b7f7d324575b19bb&" />
                         <Card.Body className='text-center custom-card-body'>
                             <Card.Title>Risk of Rain</Card.Title>
-                            <Card.Text>
+                            <Card.Text className='custom-card-text'>
                                 <i className="bi bi-tag-fill"></i> $3.000
                             </Card.Text>
-                            <Button variant="primary" className='custom-button'>Agregar al carro</Button>
+                            
                         </Card.Body>
                     </Card>
                 </Container>

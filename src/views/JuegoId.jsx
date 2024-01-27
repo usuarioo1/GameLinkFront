@@ -1,8 +1,10 @@
 // JuegoId.js
-import  { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axiosClient from '../config/axiosClient';
-import '../css/juegoId.css'
+import '../css/juegoId.css';
+import { Container, Row, Col, Image, Button } from 'react-bootstrap';
+
 
 const JuegoId = () => {
   const { id } = useParams();
@@ -26,14 +28,20 @@ const JuegoId = () => {
     <div>
       {juego ? (
         <>
-        <div className="card2">
-          <h2>{juego.nombre}</h2>
-          <img src={juego.img} alt={juego.nombre} />
-          <p className="description">{juego.descripcion}</p>
-          <p className="price">${juego.precio}</p>
-          {/* Mostrar otros detalles según sea necesario */}
-          </div>
-          
+          <Container>
+            <Row>
+              <Col md={6}>
+                <Image src={juego.img} fluid />
+              </Col>
+              <Col md={6}>
+                <h2>{juego.nombre}</h2>
+                <p className="description">{juego.descripcion}gdfdg</p>
+                <p className="price">${juego.precio}</p>
+                <Button variant="primary">Agregar al Carrito</Button>
+              </Col>
+            </Row>
+          </Container>
+
         </>
       ) : (
         <p>Cargando detalles del juego...</p>
@@ -43,3 +51,29 @@ const JuegoId = () => {
 };
 
 export default JuegoId;
+
+// import React from 'react';
+// import { Container, Row, Col, Image, Button } from 'react-bootstrap';
+
+// const ProductDetailPage = () => {
+//   return (
+//     <Container>
+//       <Row>
+//         <Col md={6}>
+//           <Image src={juego.img} fluid />
+//         </Col>
+//         <Col md={6}>
+//           <h2>{juego.nombre}</h2>
+//           <p className="description">{juego.descripcion}</p>
+//           <p className="price">${juego.precio}</p>
+//           <Button variant="primary">Agregar al Carrito</Button>
+//         </Col>
+//       </Row>
+//     </Container>
+//   );
+// };
+
+// export default ProductDetailPage;
+
+
+
