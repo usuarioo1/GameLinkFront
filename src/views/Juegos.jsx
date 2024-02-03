@@ -113,7 +113,7 @@ const Juegos = () => {
                   <Card.Img variant="top" src={product.img} alt="" />
                 </Link>
                 <Card.Body className="text-center custom-card-body">
-                  <Card.Title className='card-title'>{product.nombre}</Card.Title>
+                  <Card.Title className='card-title-h5'>{product.nombre}</Card.Title>
                   <Card.Text>${product.precio}</Card.Text>
                   {product.stock === 0 ? (
                     <h4>sin stock</h4>
