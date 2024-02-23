@@ -18,7 +18,7 @@ const LoMasVendido = (props) => {
                 </Container>
                 <Container fluid className='d-flex justify-content-center flex-wrap'>
                     <Card className='mb-4 mx-2' style={{ width: '18rem', height: '22rem' }}>
-                        <Card.Img variant="top" src="https://media.discordapp.net/attachments/1176712497668030486/1200699909762986004/Diseno_sin_titulo.png?ex=65c721ee&is=65b4acee&hm=6abcf7e51994d611b85d75a3d390875bca3d576e9462f46e3991320195ab7f67&=&format=webp&quality=lossless" />
+                        <Card.Img variant="top" src="https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/es_LA/games/switch/m/mortal-kombat-11-switch/hero" />
                         <Card.Body className='text-center custom-card-body'>
                             <Card.Title>Call Of Duty III</Card.Title>
                             <Card.Text>
