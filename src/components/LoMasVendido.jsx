@@ -18,7 +18,7 @@ const LoMasVendido = (props) => {
                 </Container>
                 <Container fluid className='d-flex justify-content-center flex-wrap'>
                     <Card className='mb-4 mx-2' style={{ width: '18rem', height: '22rem' }}>
-                        <Card.Img variant="top" src="https://res.cloudinary.com/dpbpyzl96/image/upload/v1708704043/GameLink/kzsmhiksdyvujnnh2iak.jpg" />
+                        <Card.Img variant="top" src="https://res.cloudinary.com/dpbpyzl96/image/upload/v1708704251/GameLink/ylzf69xcde5fmbcjviu8.jpg" />
                         <Card.Body className='text-center custom-card-body'>
                             <Card.Title>Call Of Duty III</Card.Title>
                             <Card.Text>
