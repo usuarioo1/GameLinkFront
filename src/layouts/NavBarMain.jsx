@@ -19,7 +19,7 @@ const NavBarMain = () => {
                         <Container>
                             <Navbar.Brand href="/">
                                 <img
-                                    src="https://cdn.discordapp.com/attachments/1176712497668030486/1190529227984994364/logo_1.png?ex=65a221be&is=658facbe&hm=da33736fb34b949ad0ce07c4e4e671219f9d144daaf1782570e341a0e5944e39&"
+                                    src="https://res.cloudinary.com/dpbpyzl96/image/upload/v1710901075/GameLink/ekm2nom3uu6i1kcq9v5f.webp"
                                     width="auto"
                                     height="30"
                                     className="d-inline-block align-top"
